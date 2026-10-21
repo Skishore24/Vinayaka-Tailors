@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 7rem 1.5rem 5rem;
+  overflow: hidden;
+}
+
+/* Background */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(37, 13, 19, 0.78) 0%,
+    rgba(112, 44, 59, 0.45) 60%,
+    transparent 100%
+  );
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-blush);
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.12;
+  margin: 0 0 1.4rem;
+  max-width: 620px;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--color-blush);
+}
+
+.subtext {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 0 2.2rem;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.ctaPrimary:hover,
+.ctaPrimary:focus-visible {
+  background: var(--color-brand-dark);
+  box-shadow: 0 6px 22px rgba(112, 44, 59, 0.45);
+  transform: translateY(-2px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.ctaSecondary:hover,
+.ctaSecondary:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Highlights */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.8rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
+}
+
+.highlightDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-blush);
+  flex-shrink: 0;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.scrollIndicator:hover {
+  color: #fff;
+  transform: translateX(-50%) translateY(3px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scrollIndicator {
+    animation: bounce 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    align-items: center;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlights {
+    justify-content: center;
+  }
+
+  .bgImage {
+    object-position: 65% 25%;
+  }
+}

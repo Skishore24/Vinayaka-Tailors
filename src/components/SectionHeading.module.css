@@ -1,0 +1,51 @@
+.wrapper {
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.65rem;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-brand);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Light variant for dark backgrounds */
+.light .eyebrow {
+  color: var(--color-blush);
+}
+.light .heading {
+  color: #fff;
+}
+.light .subheading {
+  color: rgba(255, 255, 255, 0.8);
+}

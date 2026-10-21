@@ -1,0 +1,132 @@
+.section {
+  padding: var(--section-py) 1.5rem;
+  background: var(--color-blush);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Image */
+.imageCol {}
+
+.mainImage {
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  box-shadow: 0 16px 48px rgba(112, 44, 59, 0.14);
+}
+
+/* Class cards */
+.classCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.classCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.classCard:hover {
+  box-shadow: 0 8px 24px rgba(112, 44, 59, 0.12);
+  transform: translateY(-2px);
+}
+
+.classHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.classIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(112, 44, 59, 0.08);
+  color: var(--color-brand);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.classTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.classDesc {
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0 0 0.8rem;
+}
+
+.classLink {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.classLink:hover,
+.classLink:focus-visible {
+  color: var(--color-brand);
+  text-decoration: underline;
+}
+
+/* Section CTA */
+.cta {}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.8rem;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+}
+
+.ctaBtn:hover,
+.ctaBtn:focus-visible {
+  background: var(--color-brand-dark);
+  box-shadow: 0 6px 20px rgba(112, 44, 59, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .imageCol {
+    order: -1;
+  }
+
+  .mainImage {
+    aspect-ratio: 16 / 9;
+  }
+}

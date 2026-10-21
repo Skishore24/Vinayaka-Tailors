@@ -1,0 +1,264 @@
+/* ── Announcement Bar ──────────────────────────────────────────────── */
+.announcementBar {
+  background: var(--color-brand);
+  color: #fff;
+  text-align: center;
+  padding: 0.45rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.announcementText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* ── Header ────────────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 36px; /* sits below announcement bar */
+  z-index: 1000;
+  background: rgba(255, 249, 245, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.scrolled {
+  box-shadow: 0 2px 20px rgba(112, 44, 59, 0.1);
+  border-color: var(--color-border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ── Logo ──────────────────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-brand);
+  color: #fff;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  line-height: 1.2;
+  max-width: 160px;
+}
+
+/* ── Desktop Nav ───────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--color-brand);
+  background: rgba(112, 44, 59, 0.06);
+}
+
+.navLink.active {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+/* ── Actions ───────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.bookBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+}
+
+.bookBtn:hover,
+.bookBtn:focus-visible {
+  background: var(--color-brand-dark);
+  box-shadow: 0 4px 16px rgba(112, 44, 59, 0.3);
+  transform: translateY(-1px);
+}
+
+.phoneBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-blush);
+  color: var(--color-brand);
+  text-decoration: none;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.phoneBtn:hover {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  color: var(--color-brand);
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover {
+  background: var(--color-blush);
+}
+
+/* ── Mobile Drawer ─────────────────────────────────────────────────── */
+.drawer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 106px; /* announcement bar height + header height */
+  background: var(--color-bg);
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drawerLink {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s ease;
+}
+
+.drawerLink:hover,
+.drawerLink:focus-visible {
+  color: var(--color-brand);
+}
+
+.drawerLink.drawerActive {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+.drawerBook {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.22s ease;
+}
+
+.drawerBook:hover {
+  background: var(--color-brand-dark);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  .bookBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drawer {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    font-size: 0.92rem;
+    max-width: 120px;
+  }
+  .inner {
+    padding: 0 1rem;
+  }
+}
