@@ -1,21 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import { business } from "../data/business";
 import { buildWhatsAppUrl } from "../utils/whatsapp";
-import { Menu, X, Phone, Scissors } from "lucide-react";
+import BrandLogo from "./BrandLogo";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#tailoring", label: "Tailoring" },
-  { href: "#bridal", label: "Bridal & Beauty" },
-  { href: "#classes", label: "Classes" },
+  { href: "#about", label: "About Us" },
+  { href: "#services", label: "Our Services" },
+  { href: "#collection", label: "Garment Collection" },
+  { href: "#embroidery", label: "Embroidery" },
+  { href: "#craftsmanship", label: "Craftsmanship" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
 
-const whatsappBookingUrl = buildWhatsAppUrl(
-  "Hello, I would like to book an appointment. Please share your availability and details."
+const whatsappHeaderUrl = buildWhatsAppUrl(
+  "Hello Vinayaka Tailors, I would like to enquire about your women's tailoring and stitching services."
 );
 
 export default function Header() {
@@ -24,14 +26,14 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
   const navRef = useRef(null);
 
-  // Sticky header shadow on scroll
+  // Shadow on scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Highlight active nav link based on scroll position
+  // Intersection observer for active navigation state
   useEffect(() => {
     const sections = navLinks.map((l) => l.href.replace("#", ""));
     const observer = new IntersectionObserver(
@@ -40,7 +42,7 @@ export default function Header() {
           if (e.isIntersecting) setActiveSection(e.target.id);
         });
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-30% 0px -55% 0px" }
     );
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -49,7 +51,7 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
-  // Close menu on outside click
+  // Close menu on click outside
   useEffect(() => {
     if (!menuOpen) return;
     const handler = (e) => {
@@ -61,10 +63,23 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handler);
   }, [menuOpen]);
 
-  // Prevent body scroll when menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => (document.body.style.overflow = "");
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  // Escape key closes mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [menuOpen]);
 
   const handleNavClick = (e, href) => {
@@ -85,94 +100,115 @@ export default function Header() {
         <p className={styles.announcementText}>{business.announcement}</p>
       </div>
 
-      {/* Main Header */}
+      {/* Main Sticky Header */}
       <header
-        className={[styles.header, isScrolled ? styles.scrolled : ""].join(" ")}
+        className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
         ref={navRef}
       >
         <div className={styles.inner}>
-          {/* Brand / Logo */}
+          {/* Brand Logo */}
           <a
             href="#home"
-            className={styles.logo}
+            className={styles.logoLink}
             onClick={(e) => handleNavClick(e, "#home")}
-            aria-label={`${business.name} – Home`}
+            aria-label={`${business.name} – Return to top`}
           >
-            <span className={styles.logoIcon} aria-hidden="true">
-              <Scissors size={20} strokeWidth={1.8} />
-            </span>
-            <span className={styles.logoText}>{business.name}</span>
+            <BrandLogo variant="horizontal" size={40} />
           </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={[
-                  styles.navLink,
+                className={`${styles.navLink} ${
                   activeSection === link.href.replace("#", "")
                     ? styles.active
-                    : "",
-                ].join(" ")}
+                    : ""
+                }`}
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* CTA + Hamburger */}
+          {/* Actions */}
           <div className={styles.actions}>
             <a
-              href={whatsappBookingUrl}
+              href={whatsappHeaderUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.bookBtn}
+              className={styles.enquireBtn}
+              aria-label="Enquire on WhatsApp"
             >
-              Book on WhatsApp
+              <MessageCircle size={16} aria-hidden="true" />
+              <span>Enquire on WhatsApp</span>
             </a>
-            <a href={business.phoneLink} className={styles.phoneBtn} aria-label="Call us">
-              <Phone size={16} />
+
+            <a
+              href={business.phoneLink}
+              className={styles.phoneBtn}
+              aria-label={`Call ${business.phone}`}
+              title={`Call ${business.phone}`}
+            >
+              <Phone size={16} aria-hidden="true" />
             </a>
+
+            {/* Mobile Hamburger Button */}
             <button
               className={styles.hamburger}
               onClick={() => setMenuOpen((o) => !o)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-label={menuOpen ? "Close menu" : "Open navigation menu"}
               aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Drawer */}
+        {/* Mobile Navigation Drawer */}
         {menuOpen && (
-          <div className={styles.drawer} role="dialog" aria-label="Navigation menu">
-            <nav aria-label="Mobile navigation">
+          <div
+            id="mobile-navigation"
+            className={styles.drawer}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+          >
+            <nav className={styles.drawerNav} aria-label="Mobile navigation links">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={[
-                    styles.drawerLink,
+                  className={`${styles.drawerLink} ${
                     activeSection === link.href.replace("#", "")
                       ? styles.drawerActive
-                      : "",
-                  ].join(" ")}
+                      : ""
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
+              <div className={styles.drawerDivider} />
               <a
-                href={whatsappBookingUrl}
+                href={whatsappHeaderUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.drawerBook}
+                className={styles.drawerWhatsApp}
               >
-                Book on WhatsApp
+                <MessageCircle size={18} aria-hidden="true" />
+                Enquire on WhatsApp
+              </a>
+              <a
+                href={business.phoneLink}
+                className={styles.drawerPhone}
+              >
+                <Phone size={18} aria-hidden="true" />
+                Call: {business.phone}
               </a>
             </nav>
           </div>

@@ -1,11 +1,22 @@
 import { buildWhatsAppUrl } from "../utils/whatsapp";
+import { MessageCircle } from "lucide-react";
 import styles from "./ServiceCard.module.css";
 
 /**
- * Service card used in the Services Overview grid.
- * Props: title, description, image, whatsappMsg, icon (Lucide element)
+ * ServiceCard for Vinayaka Tailors Women's Stitching Services
  */
-export default function ServiceCard({ title, description, image, whatsappMsg, icon: Icon }) {
+export default function ServiceCard({
+  title,
+  description,
+  image,
+  whatsappMsg,
+  badge,
+}) {
+  const url = buildWhatsAppUrl(
+    whatsappMsg ||
+      `Hello Vinayaka Tailors, I would like to enquire about ${title}. Please let me know the details.`
+  );
+
   return (
     <article className={styles.card}>
       <div className={styles.imageWrap}>
@@ -16,26 +27,24 @@ export default function ServiceCard({ title, description, image, whatsappMsg, ic
           loading="lazy"
           onError={(e) => {
             e.target.src =
-              "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80";
+              "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&q=80";
           }}
         />
-        {Icon && (
-          <span className={styles.iconBadge} aria-hidden="true">
-            <Icon size={18} strokeWidth={1.8} />
-          </span>
-        )}
+        {badge && <span className={styles.badge}>{badge}</span>}
       </div>
-      <div className={styles.body}>
+
+      <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
         <a
-          href={buildWhatsAppUrl(whatsappMsg)}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.enquireLink}
+          className={styles.enquireBtn}
           aria-label={`Enquire on WhatsApp about ${title}`}
         >
-          Enquire on WhatsApp →
+          <MessageCircle size={15} aria-hidden="true" />
+          <span>Enquire for This Style</span>
         </a>
       </div>
     </article>

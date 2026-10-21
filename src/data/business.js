@@ -1,41 +1,51 @@
 /**
- * Central configuration file for all business information.
- * Edit this file to update business name, contact details,
- * location, and other key information across the entire website.
+ * Central configuration file for Vinayaka Tailors.
+ * Business details, contact info, maps location, and SEO metadata.
  */
 
 export const business = {
-  name: "YOUR BUSINESS NAME",        // ← Replace with actual business name
-  tagline: "Women's Tailoring & Bridal Studio",
+  name: "Vinayaka Tailors",
+  shortName: "Vinayaka",
+  tagline: "Perfect Fit. Timeless Style.",
+  category: "Women's Tailoring & Custom Stitching",
   description:
-    "A dedicated women's tailoring, fashion designing, bridal makeup, embroidery, and beauty services studio — crafted to make every outfit and occasion truly special.",
+    "Exclusively specializing in women's custom tailoring, designer blouses, bridal wear, traditional dresses, and exquisite Aari embroidery crafted to your unique fit and style.",
   phone: "9698480433",
   phoneLink: "tel:+919698480433",
   whatsapp: "+919698480433",
-  whatsappNumber: "919698480433",    // Used in wa.me links (no + or spaces)
+  whatsappNumber: "919698480433", // Used in wa.me links
   mapUrl: "https://maps.app.goo.gl/ntVafAavrGTANWVF6",
 
-  /** Announcement bar message (keep it short and factual) */
+  /** Announcement bar message */
   announcement:
-    "Personalized Stitching  •  Bridal Services  •  Fashion Designing Classes",
+    "Women's Custom Tailoring • Traditional Wear • Designer Stitching",
 
   /**
-   * About section description — edit freely to reflect real business story.
-   * Do NOT invent owner name, years of experience, or awards.
+   * About section details — authentic and focused purely on women's tailoring craftsmanship.
+   * No fabricated personal background, awards, or years of experience.
    */
-  aboutText: [
-    "Welcome to our women's tailoring and bridal studio — a space dedicated to personalized fashion, elegant stitching, and beauty services tailored to every occasion.",
-    "We offer a wide range of services including custom blouse stitching, traditional and designer garment tailoring, Aari and hand embroidery, bridal makeup, saree draping, mehendi, and grooming. We also conduct fashion designing and embroidery classes for those who wish to learn the art of needlework and design.",
-    "Every stitch is made with care, every design is crafted with attention to detail, and every customer is treated with warmth and respect. We believe that the right outfit and look can transform how you feel — and that's exactly what we strive to deliver.",
-  ],
+  about: {
+    heading: "Tailoring That Feels Personal",
+    subheading: "Crafted around your style, your preferences, and your perfect fit.",
+    paragraphs: [
+      "At Vinayaka Tailors, we believe that every woman deserves clothing that fits with effortless elegance and confidence. We specialize exclusively in women's tailoring, custom stitching, and traditional garments tailored to your exact measurements.",
+      "From bespoke bridal blouses with intricate Aari embroidery to flowing anarkalis, lehengas, salwar suits, kurtis, and modern designer wear, each piece is shaped with thoughtful attention to neckline details, seam accuracy, and comfortable finishing.",
+      "Whether you are preparing for a wedding, festive celebration, or daily ethnic elegance, our dedication to precision cutting and neat craftsmanship ensures garments you will cherish wearing time and time again.",
+    ],
+    values: [
+      "Custom-fit women's wear shaped to your measurements",
+      "Traditional & contemporary Indian silhouettes",
+      "Neat stitching, clean piping, and durable finishing",
+      "Dedicated Aari and hand embroidery embellishments",
+    ],
+  },
 
   /** SEO metadata */
   seo: {
-    title:
-      "YOUR BUSINESS NAME | Women's Tailoring, Bridal Makeup & Fashion Designing",
+    title: "Vinayaka Tailors | Women's Tailoring & Custom Stitching",
     description:
-      "Premium women's tailoring, Aari embroidery, bridal makeup & hair styling, saree draping, mehendi, and fashion designing classes. Personalized stitching for every occasion. Enquire on WhatsApp.",
-    ogImage: "/og-image.jpg",        // Place a 1200×630 image in /public/
-    canonical: "https://yourdomain.com", // ← Replace with actual domain
+      "Vinayaka Tailors specializes exclusively in women's custom tailoring, designer blouse stitching, bridal wear, anarkalis, lehengas, and intricate Aari embroidery. Enquire on WhatsApp for personalized stitching.",
+    ogImage: "/og-image.jpg",
+    canonical: "https://vinayakatailors.com",
   },
 };

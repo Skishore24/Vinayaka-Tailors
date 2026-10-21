@@ -1,42 +1,43 @@
-import { whyChooseUs } from "../data/services";
+import { whyChooseValues } from "../data/services";
 import SectionHeading from "../components/SectionHeading";
 import {
   Ruler,
+  Sparkles,
   Scissors,
-  Layers,
+  CheckCircle,
+  Palette,
   MessageCircle,
-  Smartphone,
-  CalendarHeart,
 } from "lucide-react";
 import styles from "./WhyChooseUs.module.css";
 
 const iconMap = {
   Ruler,
+  Sparkles,
   Scissors,
-  Layers,
+  CheckCircle,
+  Palette,
   MessageCircle,
-  Smartphone,
-  CalendarHeart,
 };
 
 export default function WhyChooseUs() {
   return (
-    <section id="why" className={styles.section} aria-label="Why Choose Us">
+    <section id="why" className={styles.section} aria-label="Why Choose Vinayaka Tailors">
       <div className={styles.inner}>
         <SectionHeading
-          eyebrow="Our Promise"
-          heading="Why Choose Us"
-          subheading="We are committed to personalized service, quality craftsmanship, and making you feel valued at every step."
+          eyebrow="OUR SERVICE VALUES"
+          heading="Designed Around You"
+          subheading="Every garment we stitch is treated with individual attention, precise measurements, and a commitment to authentic women's tailoring."
+          light={true}
         />
 
         <div className={styles.grid}>
-          {whyChooseUs.map((item) => {
+          {whyChooseValues.map((item) => {
             const Icon = iconMap[item.icon] || Scissors;
             return (
               <article key={item.title} className={styles.card}>
-                <span className={styles.icon} aria-hidden="true">
-                  <Icon size={22} strokeWidth={1.8} />
-                </span>
+                <div className={styles.iconWrap} aria-hidden="true">
+                  <Icon size={22} strokeWidth={1.8} className={styles.icon} />
+                </div>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDesc}>{item.description}</p>
               </article>

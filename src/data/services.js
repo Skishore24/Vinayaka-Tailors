@@ -1,271 +1,272 @@
 /**
- * Services data — edit descriptions freely.
- * Each service's whatsappMsg is pre-filled in enquiry links.
+ * Vinayaka Tailors — Services & Garment Categories Data
+ * Exclusively focused on women's tailoring, custom stitching, traditional clothing,
+ * designer garments, and embroidery.
+ *
+ * All services and categories are editable locally.
  */
 
-export const services = [
+export const tailoringServices = [
   {
-    id: "tailoring",
-    title: "Women's Tailoring",
-    icon: "Scissors",
+    id: "blouse",
+    title: "Women's Blouse Stitching",
+    category: "Blouses",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=80",
     description:
-      "Custom stitching for blouses, anarkalis, lehengas, salwar suits, kurtas, and all ethnic wear — crafted to your exact measurements and preferences.",
+      "Precision-tailored saree blouses with custom necklines, sleeve cuts, padded or non-padded linings, and comfortable underarm fit.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Women's Tailoring services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about women's blouse stitching. Please let me know the details.",
+    badge: "Most Requested",
   },
   {
-    id: "aari",
-    title: "Aari & Hand Embroidery",
-    icon: "Sparkles",
+    id: "churidar-salwar",
+    title: "Churidar & Salwar Stitching",
+    category: "Traditional Wear",
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=700&q=80",
     description:
-      "Intricate Aari and hand embroidery work on blouses, dupattas, kurtas, and sarees — adding timeless elegance to every piece.",
+      "Classic churidars, gathered salwars, straight pants, and palazzo sets stitched to your comfortable leg measurements and preferred fall.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Aari Embroidery and Hand Embroidery services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about churidar and salwar stitching. Please let me know the details.",
   },
   {
-    id: "bridal",
-    title: "Bridal Makeup & Hair Styling",
-    icon: "Star",
+    id: "kurti-kurta",
+    title: "Kurti & Kurta Stitching",
+    category: "Traditional Wear",
+    image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=700&q=80",
     description:
-      "Complete bridal makeup and hair styling packages designed to make you look radiant and camera-ready on your special day.",
+      "Everyday and festive women's kurtis, A-line kurtas, and front-slit tunics stitched with clean side slits, piping, and neck yokes.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Bridal Makeup and Hair Styling services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about kurti and kurta stitching. Please let me know the details.",
   },
   {
-    id: "saree",
-    title: "Saree Draping",
-    icon: "Flower2",
+    id: "anarkali",
+    title: "Anarkali Stitching",
+    category: "Traditional Wear",
+    image: "https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=700&q=80",
     description:
-      "Professional saree draping in a variety of styles — perfect for weddings, functions, and everyday elegance.",
+      "Graceful multi-kalidar anarkali suits and floor-length flared dresses cut for balanced volume, structured bodices, and elegant drape.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Saree Draping services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about anarkali suit stitching. Please let me know the details.",
+    badge: "Popular Choice",
   },
   {
-    id: "classes",
-    title: "Fashion Designing Classes",
-    icon: "BookOpen",
+    id: "lehenga-bridal",
+    title: "Lehenga & Bridal Wear Stitching",
+    category: "Bridal Wear",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80",
     description:
-      "Learn fashion designing, embroidery techniques, and garment construction in a friendly, hands-on environment.",
+      "Full-flare bridal lehenga skirts, choli blouses, can-can skirt structuring, and dupatta border attachment tailored for grand occasions.",
     whatsappMsg:
-      "Hello, I would like to know more about your Fashion Designing and Embroidery Classes. Please share the details.",
-    image:
-      "https://images.unsplash.com/photo-1556742521-9713bf272865?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about lehenga and bridal wear stitching. Please let me know the details.",
+    badge: "Bridal Special",
   },
   {
-    id: "mehendi",
-    title: "Mehendi Services",
-    icon: "Palette",
+    id: "designer-wear",
+    title: "Designer Wear Stitching",
+    category: "Designer Wear",
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80",
     description:
-      "Beautiful bridal and occasion mehendi designs — Indian and contemporary patterns applied with care for any celebration.",
+      "Modern Indo-western fusion silhouettes, cape gowns, peplum blouses, and bespoke occasion wear brought to life from your design ideas.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Mehendi Services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1597983073493-88cd51aae7d3?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about custom designer wear stitching. Please let me know the details.",
   },
   {
-    id: "grooming",
-    title: "Grooming Services",
-    icon: "Gem",
+    id: "wedding-gown",
+    title: "Wedding Gown Stitching",
+    category: "Bridal Wear",
+    image: "https://images.unsplash.com/photo-1594552072238-b8a33785b261?w=700&q=80",
     description:
-      "Personal grooming services to help you look polished and confident for every occasion.",
+      "Elegant custom wedding gowns, reception evening gowns, and party dresses crafted with tailored bodices and flowing skirts.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Grooming Services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about wedding gown stitching. Please let me know the details.",
   },
   {
-    id: "nails",
-    title: "Nail Services",
-    icon: "Heart",
+    id: "wedding-suit",
+    title: "Wedding Suit Stitching",
+    category: "Bridal Wear",
+    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=700&q=80",
     description:
-      "Nail buffing and care to give your hands the perfect finishing touch for every event.",
+      "Heavily ornamented festive salwar suits, shararas, ghararas, and ceremonial outfits stitched with precision interlining and borders.",
     whatsappMsg:
-      "Hello, I would like to enquire about your Nail Services. Please share more details.",
-    image:
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80",
+      "Hello Vinayaka Tailors, I would like to enquire about wedding suit stitching. Please let me know the details.",
+  },
+  {
+    id: "jacket",
+    title: "Jacket Stitching",
+    category: "Designer Wear",
+    image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=700&q=80",
+    description:
+      "Tailored ethnic jackets, shrugs, and embroidered koti layers designed to pair beautifully over anarkalis, sarees, or dresses.",
+    whatsappMsg:
+      "Hello Vinayaka Tailors, I would like to enquire about women's jacket stitching. Please let me know the details.",
+  },
+  {
+    id: "kurta-pyjama",
+    title: "Kurta Pyjama Stitching",
+    category: "Traditional Wear",
+    image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=700&q=80",
+    description:
+      "Comfort-fit traditional kurta and pyjama / pant sets stitched with neat collar bands, side pockets, and durable seam work.",
+    whatsappMsg:
+      "Hello Vinayaka Tailors, I would like to enquire about kurta pyjama stitching. Please let me know the details.",
+  },
+  {
+    id: "uniform",
+    title: "Uniform Stitching",
+    category: "Traditional Wear",
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=700&q=80",
+    description:
+      "Neat, durable women's institutional and professional uniforms stitched with consistent sizing, sturdy seams, and crisp lines.",
+    whatsappMsg:
+      "Hello Vinayaka Tailors, I would like to enquire about women's uniform stitching. Please let me know the details.",
+  },
+  {
+    id: "saree-tailoring",
+    title: "Saree Blouse & Tailoring",
+    category: "Blouses",
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=700&q=80",
+    description:
+      "Complete saree-related stitching including custom blouse tailoring, fall and piko finishing, and pre-pleated saree stitching.",
+    whatsappMsg:
+      "Hello Vinayaka Tailors, I would like to enquire about saree blouse stitching and garment tailoring. Please let me know the details.",
   },
 ];
 
-/** Tailoring garment categories displayed in the Tailoring section */
-export const tailoringCategories = [
-  [
-    "Anarkali",
-    "Churidar",
-    "Kurta",
-    "Lehenga",
-    "Uniform",
-  ],
-  [
-    "Blouse",
-    "Designer Wear",
-    "Kurta Pyjama",
-    "Salwar & Kameez",
-    "Wedding Gown",
-  ],
-  [
-    "Bridal Wear",
-    "Jacket",
-    "Kurti",
-    "Saree",
-    "Wedding Suit",
-  ],
-];
-
-/** Classes offered */
-export const classes = [
+/**
+ * Embroidery services (Aari & Hand Embroidery)
+ */
+export const embroideryServices = [
   {
-    id: "aari-class",
+    id: "aari-embroidery",
     title: "Aari Embroidery",
+    subtitle: "Traditional Needlework & Zari Embellishment",
     description:
-      "Master the art of Aari embroidery — learn needlework techniques to create beautiful designs on fabric.",
+      "Exquisite Aari needlework crafted on blouse necks, bridal sleeves, and dupattas using fine metallic zardozi, beads, sequins, and silk threads.",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80",
+    highlights: [
+      "Custom neckline patterns (U, V, boat neck, pot neck)",
+      "Bridal blouse sleeve motifs (peacock, floral, temple)",
+      "High-density zardozi and thread embroidery",
+      "Seamless integration with tailored blouse cut",
+    ],
     whatsappMsg:
-      "Hello, I would like to know more about your Aari Embroidery Classes. Please share the details.",
+      "Hello Vinayaka Tailors, I would like to enquire about Aari embroidery work for my blouse/garment. Please let me know the details.",
   },
   {
-    id: "embroidery-class",
-    title: "Embroidery",
+    id: "hand-embroidery",
+    title: "Hand Embroidery",
+    subtitle: "Artisanal Needle & Thread Artistry",
     description:
-      "Explore hand embroidery styles and create stunning decorative stitch-work on garments, accessories, and home textiles.",
+      "Delicate hand-stitched floral patterns, French knots, mirror work, and border highlights crafted with care to elevate festive and traditional garments.",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80",
+    highlights: [
+      "Intricate thread floral and botanical motifs",
+      "Mirror work, cut-dana, and pearl bead embellishment",
+      "Custom border detailing on dupattas and kurtas",
+      "Gentle handling of raw silk, organza, and velvet",
+    ],
     whatsappMsg:
-      "Hello, I would like to know more about your Embroidery Classes. Please share the details.",
-  },
-  {
-    id: "fashion-class",
-    title: "Fashion Designing",
-    description:
-      "Learn the fundamentals of garment design, pattern making, measurements, and stitching to create your own fashion pieces.",
-    whatsappMsg:
-      "Hello, I would like to know more about your Fashion Designing Classes. Please share the details.",
+      "Hello Vinayaka Tailors, I would like to enquire about hand embroidery services for my garment. Please share details.",
   },
 ];
 
-/** Bridal and styling packages */
-export const bridalServices = [
+/**
+ * The 15 Confirmed Garment Categories for Dropdowns and References
+ */
+export const confirmedGarmentCategories = [
+  "Blouse",
+  "Anarkali",
+  "Bridal Wear",
+  "Churidar",
+  "Designer Wear",
+  "Jacket",
+  "Kurta",
+  "Kurta Pyjama",
+  "Kurti",
+  "Lehenga",
+  "Salwar & Kameez",
+  "Saree-Related Blouse Stitching",
+  "Uniform",
+  "Wedding Gown",
+  "Wedding Suit",
+  "Aari Embroidery",
+  "Hand Embroidery",
+  "Women's Garment Alterations",
+  "Other Tailoring Enquiry",
+];
+
+/**
+ * 4-Step Craftsmanship Process
+ */
+export const craftsmanshipSteps = [
   {
-    id: "bridal-full",
-    title: "Bridal Makeup With Hair Styling And Saree Draping",
+    step: "01",
+    title: "Design Preference",
     description:
-      "A comprehensive bridal styling service covering makeup, hair styling, and saree draping — beautifully coordinated for your wedding day.",
-    whatsappMsg:
-      "Hello, I would like to enquire about the Bridal Makeup with Hair Styling and Saree Draping service. Please share more details.",
+      "We listen closely to your style requirements, desired neckline, sleeve length, and fabric characteristics to plan the ideal garment silhouette.",
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
   },
   {
-    id: "bridal-package",
-    title: "Bridal Package",
+    step: "02",
+    title: "Measurement & Fit",
     description:
-      "A curated bridal package covering essential beauty and styling services. Contact us to discuss what best suits your occasion.",
-    whatsappMsg:
-      "Hello, I would like to know more about your Bridal Package. Please share the details.",
+      "Detailed, exact body measurements are taken with precision to guarantee a flattering posture, comfortable movement, and balanced proportions.",
+    image: "https://images.unsplash.com/photo-1556742521-9713bf272865?w=600&q=80",
   },
   {
-    id: "saree-draping",
-    title: "Saree Draping",
+    step: "03",
+    title: "Fabric Cutting",
     description:
-      "Professional saree draping in styles suited for weddings, functions, and special events.",
-    whatsappMsg:
-      "Hello, I would like to enquire about your Saree Draping service. Please share more details.",
+      "Fabrics are carefully checked for grain alignment, pattern matching, and seam allowances before being cut with clean, professional shears.",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80",
+  },
+  {
+    step: "04",
+    title: "Stitching & Finishing",
+    description:
+      "Meticulous stitching using quality threads, smooth interlinings, neat seam overlocking, and fine edge piping ensures durable, beautiful garments.",
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
   },
 ];
 
-/** Mehendi services */
-export const mehendiServices = [
-  {
-    id: "indian-mehendi",
-    title: "Indian Mehendi – Legs",
-    description:
-      "Traditional Indian mehendi patterns applied on legs — ideal for weddings, engagements, and festive occasions.",
-    whatsappMsg:
-      "Hello, I would like to enquire about your Indian Mehendi (Legs) service. Please share more details.",
-  },
-  {
-    id: "bridal-mehendi",
-    title: "Bridal Mehendi",
-    description:
-      "Elaborate and intricately detailed bridal mehendi designed to complement your bridal look on your special day.",
-    whatsappMsg:
-      "Hello, I would like to enquire about your Bridal Mehendi service. Please share more details.",
-  },
-];
-
-/** Grooming and nail services */
-export const groomingServices = [
-  {
-    id: "saree-draping-groom",
-    title: "Saree Draping",
-    description:
-      "Expert saree draping to ensure you look perfectly styled and elegant for any occasion.",
-    whatsappMsg:
-      "Hello, I would like to enquire about your Saree Draping (Grooming) service. Please share more details.",
-  },
-  {
-    id: "nail-buffing",
-    title: "Nail Buffing",
-    description:
-      "Nail buffing and care service for a clean, polished, and beautiful finish.",
-    whatsappMsg:
-      "Hello, I would like to enquire about your Nail Buffing service. Please share more details.",
-  },
-];
-
-/** Why-choose-us points */
-export const whyChooseUs = [
+/**
+ * Why Choose Vinayaka Tailors (realistic service values only)
+ */
+export const whyChooseValues = [
   {
     icon: "Ruler",
-    title: "Personalized Design Preferences",
+    title: "Personalized Style Preferences",
     description:
-      "Every garment is stitched based on your individual measurements, fabric choice, and design vision.",
+      "Every garment is shaped around your personal taste, preferred sleeve cut, neckline contour, and comfortable fit.",
+  },
+  {
+    icon: "Sparkles",
+    title: "Traditional & Contemporary Wear",
+    description:
+      "Whether you desire timeless festive Indian garments or modern fusion silhouettes, we tailor both with equal finesse.",
   },
   {
     icon: "Scissors",
-    title: "Attention to Stitching Details",
+    title: "Custom Garment Stitching",
     description:
-      "We focus on precision and quality in every stitch — from the collar to the hem.",
+      "Specialized exclusively in women's clothing, ensuring experienced handling of fine silks, georgettes, cottons, and brocades.",
   },
   {
-    icon: "Layers",
-    title: "Traditional & Contemporary Styles",
+    icon: "CheckCircle",
+    title: "Attention to Finishing",
     description:
-      "From classic ethnic wear to modern fusion designs, we cater to every style preference.",
+      "Neat internal seams, secure hook closures, smooth lining layers, and refined piping that feel comfortable against your skin.",
+  },
+  {
+    icon: "Palette",
+    title: "Embroidery Detailing",
+    description:
+      "Artisanal Aari and hand embroidery work crafted to elevate your bridal blouses and celebration outfits.",
   },
   {
     icon: "MessageCircle",
-    title: "Friendly Customer Communication",
+    title: "Easy WhatsApp Enquiries",
     description:
-      "We keep you informed at every step and are always happy to discuss your requirements.",
+      "Discuss your design ideas, ask questions, or schedule your visit directly on WhatsApp with clear, prompt communication.",
   },
-  {
-    icon: "Smartphone",
-    title: "Convenient WhatsApp Enquiries",
-    description:
-      "Reach us instantly on WhatsApp to ask questions, share design ideas, or book an appointment.",
-  },
-  {
-    icon: "CalendarHeart",
-    title: "Services for Special Occasions",
-    description:
-      "Weddings, festivals, ceremonies — we ensure you look your absolute best for every important event.",
-  },
-];
-
-/** Enquiry form service options */
-export const serviceOptions = [
-  "Women's Tailoring",
-  "Aari Embroidery",
-  "Embroidery Classes",
-  "Fashion Designing Classes",
-  "Bridal Makeup",
-  "Bridal Package",
-  "Saree Draping",
-  "Mehendi Services",
-  "Grooming",
-  "Nail Services",
-  "Other Enquiry",
 ];

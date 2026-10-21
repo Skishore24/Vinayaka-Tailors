@@ -1,7 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#702C3B"/>
-  <!-- Scissors icon simplified -->
-  <path d="M10 8 L20 22 M20 8 L10 22" stroke="#F5E6E8" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="9" cy="23" r="3" stroke="#F5E6E8" stroke-width="2"/>
-  <circle cx="21" cy="23" r="3" stroke="#F5E6E8" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded Square Burgundy Badge -->
+  <rect width="64" height="64" rx="14" fill="#702C3B"/>
+
+  <!-- Subtle Gold Stitch Border -->
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#B89A63" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.75"/>
+
+  <!-- Needle - Left arm of "V" -->
+  <path d="M 18 13 L 21 14 L 33 53 L 31 53 L 18 13 Z" fill="#FFF9F2"/>
+
+  <!-- Needle eyelet -->
+  <ellipse cx="19.5" cy="19" rx="1.2" ry="2.8" transform="rotate(-15 19.5 19)" fill="#702C3B"/>
+
+  <!-- Right arm of "V" -->
+  <path d="M 45 13 C 44 16, 41 18, 38 25 L 31 53 L 33 53 L 46 17 C 48 15, 50 14, 51 13 Z" fill="#FFF9F2"/>
+
+  <!-- Golden thread loop -->
+  <path d="M 11 27 C 15 13, 19.5 17, 19.5 19 C 19.5 23, 22 36, 32 37 C 42 38, 50 30, 48 22 C 46 16, 40 18, 38 23 C 35 30, 36 44, 44 47" fill="none" stroke="#B89A63" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Tiny Gold Accent Diamond -->
+  <polygon points="32,54 34,56 32,58 30,56" fill="#B89A63"/>
 </svg>
