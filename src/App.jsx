@@ -7,77 +7,96 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import BackToTop from "./components/BackToTop";
 
 import Hero from "./sections/Hero";
-import Services from "./sections/Services";
-import Tailoring from "./sections/Tailoring";
-import Classes from "./sections/Classes";
-import BridalServices from "./sections/BridalServices";
-import WhyChooseUs from "./sections/WhyChooseUs";
-import Gallery from "./sections/Gallery";
 import About from "./sections/About";
-import Reviews from "./sections/Reviews";
+import TailoringServices from "./sections/TailoringServices";
+import GarmentCollection from "./sections/GarmentCollection";
+import Craftsmanship from "./sections/Craftsmanship";
+import Embroidery from "./sections/Embroidery";
+import FashionDesign from "./sections/FashionDesign";
+import Gallery from "./sections/Gallery";
+import WhyChooseUs from "./sections/WhyChooseUs";
+import DesignBanner from "./sections/DesignBanner";
 import Contact from "./sections/Contact";
 
 export default function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        {/* Primary SEO */}
+        {/* Primary Technical SEO */}
         <title>{business.seo.title}</title>
         <meta name="description" content={business.seo.description} />
         <link rel="canonical" href={business.seo.canonical} />
 
         {/* Open Graph */}
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="business.business" />
         <meta property="og:title" content={business.seo.title} />
         <meta property="og:description" content={business.seo.description} />
         <meta property="og:url" content={business.seo.canonical} />
-        <meta property="og:image" content={business.seo.ogImage} />
+        <meta property="og:site_name" content={business.name} />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={business.seo.title} />
         <meta name="twitter:description" content={business.seo.description} />
-        <meta name="twitter:image" content={business.seo.ogImage} />
 
-        {/* Structured Data — LocalBusiness (only verified facts) */}
+        {/* LocalBusiness / Tailor Schema (Verified data only) */}
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "${business.name}",
-            "description": "${business.tagline}",
+            "description": "${business.description}",
             "telephone": "+91${business.phone}",
             "url": "${business.seo.canonical}",
             "hasMap": "${business.mapUrl}",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+91${business.phone}",
-              "contactType": "customer service",
-              "areaServed": "IN"
-            }
+            "priceRange": "$$",
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Women's Custom Tailoring"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Aari & Hand Embroidery"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Designer Blouse Stitching"
+                }
+              }
+            ]
           }
         `}</script>
       </Helmet>
 
-      {/* Layout */}
+      {/* Main Layout */}
       <Header />
 
       <main id="main-content">
         <Hero />
-        <Services />
-        <Tailoring />
-        <Classes />
-        <BridalServices />
-        <WhyChooseUs />
-        <Gallery />
         <About />
-        <Reviews />
+        <TailoringServices />
+        <GarmentCollection />
+        <Craftsmanship />
+        <Embroidery />
+        <FashionDesign />
+        <Gallery />
+        <WhyChooseUs />
+        <DesignBanner />
         <Contact />
       </main>
 
       <Footer />
 
-      {/* Floating utilities */}
+      {/* Floating Utilities */}
       <WhatsAppButton />
       <BackToTop />
     </HelmetProvider>

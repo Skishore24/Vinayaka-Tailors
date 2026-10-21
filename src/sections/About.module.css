@@ -1,97 +1,184 @@
 .section {
   padding: var(--section-py) 1.5rem;
-  background: var(--color-bg);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
+  gap: 5rem;
 }
 
-/* Image */
+/* ── Image Column ────────────────────────────────────────────── */
 .imageCol {
   position: relative;
 }
 
-.image {
-  width: 100%;
-  border-radius: 22px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  box-shadow: 0 20px 54px rgba(112, 44, 59, 0.16);
+.imageWrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
 }
 
-.accentBox {
+.mainImage {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(41, 35, 40, 0.08);
+}
+
+.accentCard {
   position: absolute;
-  top: -1.2rem;
-  right: -1.2rem;
-  background: var(--color-accent);
-  color: #fff;
-  padding: 1rem 1.4rem;
-  border-radius: 14px;
-  max-width: 180px;
-  box-shadow: 0 8px 24px rgba(183, 110, 121, 0.3);
+  bottom: -1.75rem;
+  right: -1.75rem;
+  background: var(--color-wine);
+  color: var(--color-ivory);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gold);
+  box-shadow: 0 12px 32px rgba(81, 32, 45, 0.28);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 290px;
+}
+
+.accentIcon {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.accentTitle {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  line-height: 1.2;
 }
 
 .accentText {
-  font-family: var(--font-heading);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.5;
-  font-style: italic;
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 249, 242, 0.85);
+  margin-top: 2px;
 }
 
-/* Text */
-.textCol {}
+/* ── Content Column ──────────────────────────────────────────── */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+}
 
-.para {
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
-  line-height: 1.85;
-  margin: 0 0 1.2rem;
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+  background: var(--color-ivory);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-gold);
+}
+
+.valItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.valCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-blush);
+  color: var(--color-burgundy);
+  flex-shrink: 0;
+}
+
+.valText {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+}
+
+.ctaWrapper {
+  display: flex;
 }
 
 .ctaBtn {
   display: inline-flex;
   align-items: center;
-  margin-top: 0.5rem;
-  padding: 0.85rem 1.8rem;
-  background: var(--color-brand);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+  gap: 0.65rem;
+  background: var(--color-burgundy);
+  color: #ffffff;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 14px rgba(112, 44, 59, 0.25);
 }
 
-.ctaBtn:hover,
-.ctaBtn:focus-visible {
-  background: var(--color-brand-dark);
-  box-shadow: 0 6px 20px rgba(112, 44, 59, 0.3);
-  transform: translateY(-1px);
+.ctaBtn:hover {
+  background: var(--color-wine);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(81, 32, 45, 0.35);
+  color: #ffffff;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 992px) {
   .inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
-
   .imageCol {
-    order: -1;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
   }
-
-  .image {
-    aspect-ratio: 16 / 9;
+  .accentCard {
+    bottom: -1rem;
+    right: 0;
   }
+}
 
-  .accentBox {
-    display: none;
+@media (max-width: 580px) {
+  .mainImage {
+    height: 380px;
+  }
+  .accentCard {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+  .ctaWrapper {
+    width: 100%;
+  }
+  .ctaBtn {
+    width: 100%;
+    justify-content: center;
   }
 }

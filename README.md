@@ -1,6 +1,47 @@
-# YOUR BUSINESS NAME — Women's Tailoring & Bridal Studio Website
+# Vinayaka Tailors — Women's Tailoring & Custom Stitching Website
 
-A complete, professional, responsive React.js website for a women's tailoring, embroidery, bridal makeup, and beauty services business. Built with **Vite + React**, styled with **vanilla CSS Modules**, and designed for elegance, performance, and WhatsApp-first enquiries.
+A complete, production-ready, premium website for **Vinayaka Tailors**, specializing exclusively in women's custom tailoring, designer blouse stitching, bridal wear, traditional dresses, and intricate Aari embroidery.
+
+Built with **Vite + React 19**, styled with **Vanilla CSS Modules**, and architected for high performance, accessibility, technical SEO, and WhatsApp-driven customer enquiries.
+
+---
+
+## Brand Identity
+
+- **Brand Name**: Vinayaka Tailors
+- **Tagline**: *"Perfect Fit. Timeless Style."*
+- **Category**: Women's Tailoring & Custom Stitching
+- **Contact Number**: 9698480433
+- **WhatsApp**: +91 9698480433
+- **Google Maps**: [https://maps.app.goo.gl/ntVafAavrGTANWVF6](https://maps.app.goo.gl/ntVafAavrGTANWVF6)
+- **Palette**: Deep Burgundy (`#702C3B`), Rich Wine (`#51202D`), Muted Antique Gold (`#B89A63`), Warm Ivory (`#FFF9F2`), Pure White (`#FFFFFF`), Soft Blush (`#F4E8E6`), Charcoal (`#292328`)
+- **Typography**: Playfair Display (headings) & Poppins (body & navigation)
+
+---
+
+## 15 Confirmed Garment Categories
+
+1. **Anarkali** (Kalidar suits & floor-length gowns)
+2. **Blouse** (Saree blouses, princess cut, padded/unpadded)
+3. **Bridal Wear** (Heavy lehenga cholis, ceremonial outfits)
+4. **Churidar** (Comfortable leg gathers, stretch & cotton)
+5. **Designer Wear** (Indo-western fusion silhouettes, party tunics)
+6. **Jacket** (Tailored ethnic shrugs, kotis, capes)
+7. **Kurta** (Straight cut, A-line, slit kurtas)
+8. **Kurta Pyjama** (Comfortable traditional sets)
+9. **Kurti** (Casual, office, and festive tunics)
+10. **Lehenga** (Full flare skirts, can-can structuring)
+11. **Salwar & Kameez** (Gathered patiala, straight salwar sets)
+12. **Saree-Related Blouse Stitching** (Custom blouse, fall & piko)
+13. **Uniform** (Women's institutional & professional uniforms)
+14. **Wedding Gown** (Tailored evening & bridal reception gowns)
+15. **Wedding Suit** (Ornate festive celebratory suits)
+
+### Additional Services
+- **Aari Embroidery** (Fine zardozi, metallic thread, beadwork on blouses)
+- **Hand Embroidery** (Artisanal floral threadwork, mirror highlights)
+- **Custom Design Consultation** (Silhouette planning & neckline styling)
+- **Garment Alterations & Restyling** (Perfect fitting adjustments)
 
 ---
 
@@ -8,32 +49,26 @@ A complete, professional, responsive React.js website for a women's tailoring, e
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) v18 or later
-- [VS Code](https://code.visualstudio.com/) (recommended)
+- npm v9 or later
 
 ### 1. Install Dependencies
-
 ```bash
 npm install
 ```
 
-### 2. Run Locally
-
+### 2. Run Local Development Server
 ```bash
 npm run dev
 ```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Open `http://localhost:5173` in your browser.
-
-### 3. Build for Production
-
+### 3. Production Build
 ```bash
 npm run build
 ```
-
-The optimized build will be in the `dist/` folder.
+Generates production-optimized assets in the `dist/` directory.
 
 ### 4. Preview Production Build
-
 ```bash
 npm run preview
 ```
@@ -44,185 +79,102 @@ npm run preview
 
 ```
 src/
-├── assets/          # Static assets (add your own images here)
+├── assets/                  # Brand and visual assets
 ├── components/
-│   ├── BackToTop.jsx / .module.css
-│   ├── Button.jsx / .module.css
-│   ├── Footer.jsx / .module.css
-│   ├── Header.jsx / .module.css
-│   ├── SectionHeading.jsx / .module.css
-│   ├── ServiceCard.jsx / .module.css
-│   └── WhatsAppButton.jsx / .module.css
+│   ├── BackToTop.jsx        # Scroll-to-top floating button
+│   ├── BrandLogo.jsx        # Custom SVG V needle & thread emblem logo
+│   ├── Footer.jsx           # Editorial brand footer with quick links & map
+│   ├── Header.jsx           # Sticky nav with announcement bar & mobile menu
+│   ├── SectionHeading.jsx   # Consistent typography and decorative headings
+│   ├── ServiceCard.jsx      # Women's tailoring service cards with WhatsApp CTA
+│   └── WhatsAppButton.jsx   # Floating WhatsApp button with prefilled enquiry
 ├── data/
-│   ├── business.js     ← Edit business name, phone, description, SEO
-│   ├── gallery.js      ← Edit gallery images and categories
-│   ├── reviews.js      ← Add verified customer reviews here
-│   └── services.js     ← Edit all service details, descriptions, and categories
+│   ├── business.js          # Central config: name, phone, map URL, SEO
+│   ├── gallery.js           # Portfolio items with categories & descriptions
+│   ├── garments.js          # Showcase collection data & filters
+│   ├── reviews.js           # Verified customer reviews
+│   └── services.js          # Services, 15 categories, 4-step craft, values
 ├── sections/
-│   ├── About.jsx / .module.css
-│   ├── BridalServices.jsx / .module.css
-│   ├── Classes.jsx / .module.css
-│   ├── Contact.jsx / .module.css
-│   ├── Gallery.jsx / .module.css
-│   ├── Hero.jsx / .module.css
-│   ├── Reviews.jsx / .module.css
-│   ├── Services.jsx / .module.css
-│   ├── Tailoring.jsx / .module.css
-│   └── WhyChooseUs.jsx / .module.css
+│   ├── About.jsx            # "Tailoring That Feels Personal" introduction
+│   ├── Contact.jsx          # "Let's Stitch Something Special" form & map
+│   ├── Craftsmanship.jsx    # 4-step tailoring process (Design to Stitching)
+│   ├── DesignBanner.jsx     # "Have a Design in Mind?" WhatsApp enquiry banner
+│   ├── Embroidery.jsx       # Aari & Hand Embroidery spotlight cards
+│   ├── FashionDesign.jsx    # Custom silhouette & neckline design consultation
+│   ├── Gallery.jsx          # Stitching & Style Gallery with modal lightbox
+│   ├── GarmentCollection.jsx# Filterable women's garment collection
+│   ├── Hero.jsx             # Asymmetric hero with value points & CTAs
+│   ├── TailoringServices.jsx# "Made for Your Style" services grid
+│   └── WhyChooseUs.jsx      # Realistic service values on deep wine background
 ├── utils/
-│   ├── validation.js   ← Form validation helpers
-│   └── whatsapp.js     ← WhatsApp URL builder
-├── App.jsx
-├── index.css           ← Global CSS design system
-└── main.jsx
+│   ├── validation.js        # Name, 10-digit Indian phone, and garment validation
+│   └── whatsapp.js          # Centralized wa.me URL builder with encoding
+├── App.jsx                  # Main application container with Helmet SEO
+├── index.css                # Global CSS tokens, reset, typography, & focus
+└── main.jsx                 # React root entry
 public/
-├── favicon.svg
-├── robots.txt
-└── sitemap.xml
+├── favicon.svg              # Custom Vinayaka Tailors needle & thread icon
+├── robots.txt               # Search engine directives
+└── sitemap.xml              # XML sitemap for SEO
 ```
 
 ---
 
-## How to Customize
+## Features & Highlights
 
-### Change the Business Name
-Open `src/data/business.js` and update the `name` field:
-```js
-name: "Priya Fashion Studio",
-```
+1. **Custom Vector Logo**:
+   - Integrates the letter **"V"** with a tailor's sewing needle, looped gold embroidery thread, and delicate stitch markings.
+   - Available in horizontal, stacked, emblem-only, light, and dark background variants.
 
-### Change the Phone / WhatsApp Number
-In `src/data/business.js`:
-```js
-phone: "9876543210",
-whatsappNumber: "919876543210",  // +91 prefix, no + or spaces
-```
+2. **Strict Women's Tailoring Scope**:
+   - Zero beauty salon, makeup, skincare, haircut, or nail-polish content.
+   - High quality photography exclusively depicting women's Indian ethnic garments, blouses, fabrics, and sewing equipment.
 
-### Change the Google Maps Link
-In `src/data/business.js`:
-```js
-mapUrl: "https://maps.app.goo.gl/YourActualLink",
-```
+3. **WhatsApp Integration**:
+   - Pre-fills polite, relevant messages including the exact garment or service chosen.
+   - Centralized encoding through `encodeURIComponent()`.
 
-### Update the About Section Text
-In `src/data/business.js`, edit the `aboutText` array:
-```js
-aboutText: [
-  "First paragraph about your business...",
-  "Second paragraph...",
-],
-```
+4. **Technical SEO & Structured Data**:
+   - Semantic HTML5 landmarks (`header`, `main`, `section`, `article`, `footer`).
+   - Open Graph and Twitter card meta tags.
+   - Schema.org `LocalBusiness` structured data with verified telephone, name, and services.
 
-### Add or Edit Services
-Open `src/data/services.js`. Each service has:
-- `title` — displayed on the card
-- `description` — shown below the title
-- `whatsappMsg` — pre-filled WhatsApp message
-- `image` — URL to a photo (replace with your own)
+5. **Accessibility (WCAG 2.1)**:
+   - Visible gold focus rings on interactive elements.
+   - Keyboard accessible navigation and modal lightbox (Escape, Left/Right arrow keys).
+   - `prefers-reduced-motion` media query support.
 
-### Replace Gallery Images with Real Portfolio Photos
-1. Add your images to `src/assets/images/` (or any folder in `public/`)
-2. Open `src/data/gallery.js`
-3. Replace the `src` URLs with paths to your images:
-   ```js
-   src: "/portfolio/blouse-design-1.jpg",
-   alt: "Custom blouse designed for a wedding",
+---
+
+## Deployment to Vercel
+
+The project includes a ready-to-deploy [`vercel.json`](file:///c:/Users/kisho/Downloads/Tailor/vercel.json) configuration for Vite with automatic routing, SPA fallback rewrites, and asset cache headers.
+
+### Option A: Via GitHub (Recommended)
+1. Push your repository to GitHub:
+   ```bash
+   git add .
+   git commit -m "Redesign Vinayaka Tailors website and add Vercel config"
+   git push origin main
    ```
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Import your GitHub repository `Vinayaka-Tailors`.
+4. Vercel will automatically detect **Vite** with:
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+5. Click **Deploy**.
 
-### Add Customer Reviews
-Open `src/data/reviews.js` and add real review objects:
-```js
-export const reviews = [
-  {
-    id: 1,
-    name: "Customer Name",
-    rating: 5,
-    review: "The blouse stitching was perfect and exactly to my measurements.",
-    service: "Women's Tailoring",
-  },
-];
-```
-The Reviews section will automatically show the carousel once data is present.
-
-### Change the Color Palette
-All colors are CSS custom properties in `src/index.css`:
-```css
-:root {
-  --color-brand:  #702C3B;
-  --color-accent: #B76E79;
-  --color-blush:  #F5E6E8;
-  /* ... */
-}
-```
-
-### Update SEO Metadata
-In `src/data/business.js`:
-```js
-seo: {
-  title: "Your Business Name | Women's Tailoring...",
-  description: "Your meta description here...",
-  canonical: "https://yourdomain.com",
-},
-```
-Also update `public/robots.txt` and `public/sitemap.xml` with your actual domain.
-
----
-
-## Deployment
-
-### Netlify (Recommended — Free)
-1. Run `npm run build`
-2. Drag the `dist/` folder to [Netlify Drop](https://app.netlify.com/drop)
-3. Set a custom domain in Netlify settings
-
-### Vercel
+### Option B: Via Vercel CLI
 ```bash
 npx vercel
 ```
-
-### GitHub Pages
-Use the [vite-plugin-gh-pages](https://github.com/nickthetj/vite-plugin-gh-pages) plugin.
-
----
-
-## Testing Checklist
-
-Before publishing, verify:
-
-**Responsiveness**
-- [ ] 360px mobile (small Android phone)
-- [ ] 390px (iPhone 14)
-- [ ] 768px (tablet)
-- [ ] 1024px (laptop)
-- [ ] 1440px (desktop)
-
-**Links & Buttons**
-- [ ] All WhatsApp enquiry buttons open correct chat
-- [ ] Call button opens phone dialer
-- [ ] Get Directions opens Google Maps
-- [ ] Nav links scroll to correct sections
-- [ ] Back-to-top button works
-
-**Gallery**
-- [ ] Category filter buttons work
-- [ ] Lightbox opens on click
-- [ ] Keyboard navigation (← → Esc) works in lightbox
-
-**Contact Form**
-- [ ] Blank name shows error
-- [ ] Invalid phone shows error
-- [ ] No service selected shows error
-- [ ] Valid form opens WhatsApp with formatted message
-- [ ] No fake success message is shown
-
-**Production Build**
-- [ ] `npm run build` completes without errors
-- [ ] `npm run preview` shows the built site correctly
+For production release:
+```bash
+npx vercel --prod
+```
 
 ---
 
-## Support
+## License
 
-To make changes or add features, edit the data files first — most customizations require no code changes.
-
-For questions, use the WhatsApp number configured in `src/data/business.js`.
+Private & Proprietary — Vinayaka Tailors. All rights reserved.

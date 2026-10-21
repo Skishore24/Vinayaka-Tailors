@@ -1,95 +1,132 @@
 import { buildWhatsAppUrl } from "../utils/whatsapp";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import styles from "./Hero.module.css";
 
-const bookingUrl = buildWhatsAppUrl(
-  "Hello, I would like to book an appointment. Please share your availability and the services you offer."
+const primaryEnquiryUrl = buildWhatsAppUrl(
+  "Hello Vinayaka Tailors, I would like to enquire about custom stitching for my clothing. Please let me know how to proceed."
 );
 
-const scrollToServices = (e) => {
+const scrollToCollection = (e) => {
   e.preventDefault();
-  const target = document.getElementById("services");
+  const target = document.getElementById("collection");
   if (target) {
     const top = target.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top, behavior: "smooth" });
   }
 };
 
-const highlights = [
-  { label: "Custom Women's Tailoring" },
-  { label: "Bridal Makeup & Styling" },
-  { label: "Embroidery & Fashion Designing" },
+const valuePoints = [
+  "Custom-Fit Women's Wear",
+  "Traditional & Contemporary Designs",
+  "Attention to Stitching Details",
 ];
 
 export default function Hero() {
   return (
-    <section id="home" className={styles.hero} aria-label="Welcome banner">
-      {/* Background image */}
-      <div className={styles.bgWrap} aria-hidden="true">
-        <img
-          src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1400&q=85"
-          alt=""
-          className={styles.bgImage}
-          fetchpriority="high"
-        />
-        <div className={styles.overlay} />
-      </div>
+    <section id="home" className={styles.hero} aria-label="Vinayaka Tailors Hero Banner">
+      <div className={styles.inner}>
+        {/* Left Column: Asymmetric Editorial Content */}
+        <div className={styles.contentCol}>
+          <div className={styles.eyebrowWrap}>
+            <span className={styles.goldLine} aria-hidden="true" />
+            <span className={styles.eyebrow}>VINAYAKA TAILORS</span>
+          </div>
 
-      <div className={styles.content}>
-        <span className={styles.eyebrow}>
-          MADE WITH CARE, STITCHED WITH STYLE
-        </span>
+          <h1 className={styles.heading}>
+            Perfect Fit.
+            <br />
+            <span className={styles.headingAccent}>Timeless Style.</span>
+          </h1>
 
-        <h1 className={styles.heading}>
-          Beautifully Tailored.
-          <br />
-          <em>Uniquely You.</em>
-        </h1>
+          <p className={styles.supportingText}>
+            Discover beautifully tailored women's clothing crafted around your style,
+            your preferences, and the details that make every outfit unique.
+          </p>
 
-        <p className={styles.subtext}>
-          Discover personalized women's tailoring, intricate embroidery, elegant
-          bridal styling, and beauty services designed to make every occasion
-          special.
-        </p>
+          {/* Value Points */}
+          <ul className={styles.valuePoints} aria-label="Key craftsmanship values">
+            {valuePoints.map((point) => (
+              <li key={point} className={styles.valueItem}>
+                <span className={styles.checkIcon} aria-hidden="true">
+                  <CheckCircle2 size={16} />
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
 
-        {/* CTA Buttons */}
-        <div className={styles.ctas}>
-          <a
-            href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaPrimary}
-          >
-            Book Your Appointment
-          </a>
-          <a
-            href="#services"
-            onClick={scrollToServices}
-            className={styles.ctaSecondary}
-          >
-            Explore Our Services
-          </a>
+          {/* Action CTAs */}
+          <div className={styles.actions}>
+            <a
+              href={primaryEnquiryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.primaryCta}
+            >
+              <MessageCircle size={18} aria-hidden="true" />
+              <span>Enquire for Stitching</span>
+            </a>
+
+            <a
+              href="#collection"
+              onClick={scrollToCollection}
+              className={styles.secondaryCta}
+            >
+              <span>Explore Our Collection</span>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
-        {/* Highlights */}
-        <ul className={styles.highlights} aria-label="Key services">
-          {highlights.map((h) => (
-            <li key={h.label} className={styles.highlight}>
-              <span className={styles.highlightDot} aria-hidden="true" />
-              {h.label}
-            </li>
-          ))}
-        </ul>
+        {/* Right Column: High Quality Tailoring & Women's Fashion Composition */}
+        <div className={styles.visualCol} aria-hidden="true">
+          <div className={styles.imageCardMain}>
+            <img
+              src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1000&q=85"
+              alt="Handcrafted embroidered saree blouse with intricate Aari needlework"
+              className={styles.mainImage}
+              fetchPriority="high"
+            />
+            <div className={styles.imageOverlay} />
+            
+            {/* Elegant Floating Badge */}
+            <div className={styles.floatingBadge}>
+              <Sparkles size={16} className={styles.badgeIcon} />
+              <div>
+                <span className={styles.badgeTitle}>Bespoke Craftsmanship</span>
+                <span className={styles.badgeSubtitle}>Every stitch tailored with care</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary Inset Image */}
+          <div className={styles.imageCardSmall}>
+            <img
+              src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80"
+              alt="Tailor sewing threads and fabric craftsmanship"
+              className={styles.smallImage}
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Subtle Scroll Indicator */}
       <a
-        href="#services"
-        onClick={scrollToServices}
-        className={styles.scrollIndicator}
-        aria-label="Scroll to services"
+        href="#about"
+        onClick={(e) => {
+          e.preventDefault();
+          const target = document.getElementById("about");
+          if (target) {
+            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }}
+        className={styles.scrollDown}
+        aria-label="Scroll to about section"
       >
-        <ChevronDown size={24} />
+        <span className={styles.scrollText}>Scroll</span>
+        <ChevronDown size={18} />
       </a>
     </section>
   );

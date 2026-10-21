@@ -1,6 +1,6 @@
 .wrapper {
-  max-width: 680px;
-  margin-bottom: 3rem;
+  max-width: 720px;
+  margin-bottom: 3.5rem;
 }
 
 .center {
@@ -15,37 +15,49 @@
 
 .eyebrow {
   display: inline-block;
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-gold);
   margin-bottom: 0.65rem;
 }
 
 .heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: var(--color-brand);
-  line-height: 1.2;
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 600;
+  color: var(--color-burgundy);
+  line-height: 1.22;
   margin: 0 0 1rem;
 }
 
 .subheading {
-  font-size: 1rem;
-  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
   line-height: 1.75;
   margin: 0;
 }
 
 /* Light variant for dark backgrounds */
 .light .eyebrow {
-  color: var(--color-blush);
+  color: var(--color-gold-light);
 }
+
 .light .heading {
-  color: #fff;
+  color: var(--color-ivory);
 }
+
 .light .subheading {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 249, 242, 0.85);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-bottom: 2.5rem;
+  }
+  .subheading {
+    font-size: 0.95rem;
+  }
 }
